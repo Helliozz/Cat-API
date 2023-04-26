@@ -16,7 +16,6 @@ class MyApplication : Application() {
     fun getInstance() {
         val retrofit = Retrofit
             .Builder()
-//            .baseUrl("https://api.waifu.im/")
             .baseUrl("https://api.thecatapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()

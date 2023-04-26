@@ -1,6 +1,5 @@
 package com.example.network
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -18,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    //     private val adapter = MovieAdapter()
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +28,9 @@ class MainActivity : AppCompatActivity() {
             Log.d("TAG", it.toString())
 
             Glide.with(this)
-                .load(it.images[0].imageUrl)
+                .load(it[0].imageUrl)
                 .into(binding.catImageView)
-            binding.urlText.text=it.images.toString()
+            binding.urlText.text=it[0].toString()
 
         }
 

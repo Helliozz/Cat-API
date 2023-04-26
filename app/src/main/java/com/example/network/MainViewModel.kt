@@ -3,12 +3,12 @@ package com.example.network
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.example.ApiRoot
+import com.example.network.data.Cat
 import kotlinx.coroutines.*
 
 class MainViewModel constructor(private val mainRepository: MainRepository) : ViewModel() {
     val errorMessage = MutableLiveData<String>()
-    val catsList = MutableLiveData<ApiRoot>()
+    val catsList = MutableLiveData<List<Cat>>()
     var job: Job? = null
     val exceptionHandler =
         CoroutineExceptionHandler { _, throwable -> onError("Exception handled: ${throwable.localizedMessage}") }
